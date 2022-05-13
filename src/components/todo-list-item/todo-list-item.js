@@ -14,22 +14,22 @@ export default class TodoListItem extends Component {
       }
       return (
          <div className={classNames}>
-            <span
+            <div
                className="todo-list-item-label"
                onClick={onToggleDone}>
                {label}
-            </span>
+            </div>
             <div>
                <button type="button"
                   className="btn btn-outline-danger btn-sm float-right"
                   onClick={onDeleted}>
-                  <i className="fa fa-minus" />
+                  <span>&#215;</span>
                </button>
 
                <button type="button"
                   className="btn btn-outline-success btn-sm float-right"
                   onClick={onToggleImportant}>
-                  <i className="fa fa-plus" />
+                  <span>&#33;</span>
                </button>
             </div>
          </div>

@@ -2,6 +2,7 @@
    font-size: 1.25rem;
    display: flex;
    justify-content: space-between;
+   max-width: 375px;
  }
  
  .todo-list-item button {
@@ -10,6 +11,10 @@
  }
  
  .todo-list-item-label {
+   overflow: hidden;
+   max-width: 280px;
+   white-space: wrap;
+   margin-right: 5px;
    margin-left: .25rem;
    line-height: 35px;
    cursor: pointer; /* вигляд курсора */
@@ -20,7 +25,7 @@
    text-decoration: line-through;
  }
  
- .todo-list-item.important .todo-list-item-label { /* здається є описано в джс */
+ .todo-list-item.important .todo-list-item-label { 
    font-weight: bold;
    color: steelblue; 
  }

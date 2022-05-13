@@ -5,6 +5,7 @@ import SearchPanel from '../search-panel';
 import ItemStatusFilter from '../item-status-filter';
 import AddItem from '../add-item';
 import './app.css';
+import BottomButtons from '../bottom-buttons';
 export default class App extends Component {
    maxId = 100;
    state = {
@@ -34,6 +35,24 @@ export default class App extends Component {
          const newArray = [...before, ...after];
          return {
             todoData: newArray
+         }
+      })
+   };
+
+   deleteAllItems = (arr) => {
+      this.setState(({ todoData }) => {
+         const emptyArr = [];
+         return {
+            todoData: emptyArr
+         }
+      })
+   }
+
+   deleteDoneItems = () => {
+      this.setState(({ todoData }) => {
+         const idx = todoData.filter((el) => el.done === false)
+         return {
+            todoData: idx
          }
       })
    };
@@ -132,6 +151,9 @@ export default class App extends Component {
                onToggleDone={this.onToggleDone}
             />
             <AddItem onItemAdded={this.itemAdded} />
+            <BottomButtons
+               onDeleteButtons={this.deleteAllItems}
+               onDeleteDone={this.deleteDoneItems} />
          </div>
       );
    }
