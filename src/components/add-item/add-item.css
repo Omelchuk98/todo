@@ -1,3 +1,9 @@
 .add-item{
    margin-top: .75rem;
 };
+
+.search-input {
+   width: auto;
+   flex-grow: 1;
+   margin-right: 4px;
+ }
